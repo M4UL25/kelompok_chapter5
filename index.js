@@ -12,6 +12,10 @@ app.get('/cars', (req, res)=>{
     res.sendFile(process.cwd() + '/public/addCar.html')
 })
 
+app.get('/UpdateCars', (req, res)=>{
+    res.sendFile(process.cwd() + '/public/updateCar.html')
+})
+
 
 
 app.use('/images', express.static(path.join(process.cwd()+'/public/images')))
