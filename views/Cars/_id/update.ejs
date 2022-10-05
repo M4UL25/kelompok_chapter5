@@ -82,21 +82,22 @@
                 <span>Update Car Information</span>
                 
             </div><br>
-            <form action="">
+            <form method="POST" action="/Cars/<%= id %>/update">
                 <label for="">Nama <span style="color: red;">*</span></label>
-                <input type="text" placeholder="Avanza"><br>
+                <input type="text" placeholder="Avanza" name="nama" value="<%= nama %>"><br>
                 <label for="">Sewa Per Hari <span style="color: red;">*</span></label>
-                <input type="text" placeholder="Rp 0,-"><br>
+                <input type="text" placeholder="Rp 0,-" name="harga" value="<%= harga %>"><br>
                 <label for="">Ukuran <span style="color: red;">*</span></label>
-                <select name="" id="">
+                <select name="ukuran" id="">
                     <option value="Small">Small</option>
                     <option value="Medium">Medium</option>
                     <option value="Large">Large</option>
                 </select><br>
                 <label for="">Foto <span style="color: red;">*</span></label>
-                <input type="file"><br>
+                <input type="file" name="gambar" value="<%= gambar %>"><br>
                 <label for=""></label>
                 <span>File size max. 2MB</span>
+                <input type="submit" value="Update"></td>
             </form>
             <div class="button-save-cancel">
                 <button>Cancel</button>

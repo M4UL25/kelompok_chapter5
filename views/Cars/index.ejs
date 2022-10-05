@@ -80,74 +80,28 @@
             <p><b>Cars > </b>List Car</p>
             <div class="title">
                 <span>List Car</span>
-                <a href="/cars"><button><img src="images/fi_plus.png" alt="">Add New Car</button></a>
+                <a href="/Cars/create"><button><img src="images/fi_plus.png" alt="">Add New Car</button></a>
             </div>
             <button class="button-option selected">All</button>
             <button class="button-option">Small</button>
             <button class="button-option">Medium</button>
             <button class="button-option">Large</button><br><br>
             <div class="cars-container">
-                <div class="card" style="width: 18rem;">
-                    <img src="images/image_1.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p>Nama/Tipe Mobil</p>
-                      <p>Rp 430.000 / hari</p>
-                      <p><img src="images/fi_clock (1).png" alt="">  Updated at 4 Apr 2022, 09.00</p>
-                      <div class="card_button">
-                        <button><img src="images/fi_trash_2.png" alt="">Delete</button>
-                        <a href="/updateCars" style="text-decoration:none;"><button class="edit"><img src="images/fi_edit.png" alt="">Edit</button></a>
-                      </div>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="images/image_1.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p>Nama/Tipe Mobil</p>
-                      <p>Rp 430.000 / hari</p>
-                      <p><img src="images/fi_clock (1).png" alt="">  Updated at 4 Apr 2022, 09.00</p>
-                      <div class="card_button">
-                        <button><img src="images/fi_trash_2.png" alt="">Delete</button>
-                        <a href="/updateCars" style="text-decoration:none;"><button class="edit"><img src="images/fi_edit.png" alt="">Edit</button></a>
-                      </div>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="images/image_1.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p>Nama/Tipe Mobil</p>
-                      <p>Rp 430.000 / hari</p>
-                      <p><img src="images/fi_clock (1).png" alt="">  Updated at 4 Apr 2022, 09.00</p>
-                      <div class="card_button">
-                        <button><img src="images/fi_trash_2.png" alt="">Delete</button>
-                        <a href="/updateCars" style="text-decoration:none;"><button class="edit"><img src="images/fi_edit.png" alt="">Edit</button></a>
-                      </div>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="images/image_1.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p>Nama/Tipe Mobil</p>
-                      <p>Rp 430.000 / hari</p>
-                      <p><img src="images/fi_clock (1).png" alt="">  Updated at 4 Apr 2022, 09.00</p>
-                      <div class="card_button">
-                        <button><img src="images/fi_trash_2.png" alt="">Delete</button>
-                        <a href="/updateCars" style="text-decoration:none;"><button class="edit"><img src="images/fi_edit.png" alt="">Edit</button></a>
-                      </div>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="images/image_1.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p>Nama/Tipe Mobil</p>
-                      <p>Rp 430.000 / hari</p>
-                      <p><img src="images/fi_clock (1).png" alt="">  Updated at 4 Apr 2022, 09.00</p>
-                      <div class="card_button">
-                        <button><img src="images/fi_trash_2.png" alt="">Delete</button>
-                        <a href="/updateCars" style="text-decoration:none;"><button class="edit"><img src="images/fi_edit.png" alt="">Edit</button></a>
-                      </div>
-                    </div>
-                </div>
                 
+                <% Cars.forEach((car) => { %>
+                    <div class="card" style="width: 18rem;">
+                        <img src="<%= car?.gambar %>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p><%= car?.nama %></p>
+                          <p>Rp <%= car?.harga %> / hari</p>
+                          <p><img src="images/fi_clock (1).png" alt="">  Updated at <%= car?.updateAt %></p>
+                          <div class="card_button">
+                            <a href="/cars/<%= car.id %>/delete" style="text-decoration:none;"><button><img src="images/fi_trash_2.png" alt="">Delete</button></a>
+                            <a href="/cars/<%= car.id %>/update" style="text-decoration:none;"><button class="edit"><img src="images/fi_edit.png" alt="">Edit</button></a>
+                          </div>
+                        </div>
+                    </div>
+                  <% }) %>
             </div>
         </div>
     </div>

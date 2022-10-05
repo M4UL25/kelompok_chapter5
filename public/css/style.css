@@ -77,6 +77,7 @@
 .fixed-top{
     margin-left: 70px;
     height: 70px;
+    box-shadow:  0px 1px 5px;
 }
 
 .navbar .container-fluid{
@@ -127,6 +128,7 @@
 .navbar-collapse input, .navbar-collapse button{
     border-radius: 0;
 }
+
 
 .main-content{
     padding: 115px 2% 0 2%;
