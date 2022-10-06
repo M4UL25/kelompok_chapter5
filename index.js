@@ -23,25 +23,25 @@ app.use(express.json())
 //get root
 app.get('/', handler.handleListCars);
 
-//ke halaman list buku dan api get buku
+//ke halaman list mobil dan api get mobil
 app.get('/Cars', handler.handleListCars);
 
-//ke halaman create buku
+//ke halaman create mobil
 app.get('/Cars/create', handler.handlePageCreateCar);
 
-//api POST create data buku
+//api POST create data mobil
 app.post('/Cars', handler.handleCreateCar);
 
-//ke halaman detail dan api get detail buku
+//ke halaman detail dan api get detail mobil
 app.get('/Cars/:id', middleware.setCar, handler.handleGetCar);
 
-// ke halaman update buku by id
+// ke halaman update mobil by id
 app.get('/Cars/:id/update', middleware.setCar, handler.handlePageUpdateCar);
 
-//api POST update buku by id
+//api POST update mobil by id
 app.post('/Cars/:id/update', middleware.setCar, handler.handleupdateCar);
 
-//api GET delete buku by id
+//api GET delete mobil by id
 app.get('/Cars/:id/delete', middleware.setCar, handler.handleDeleteCar);
 
 app.put("/Cars/:id/picture",
@@ -53,10 +53,10 @@ app.put("/Cars/:id/picture",
         .json({ message: "Foto berhasil di-upload, silahkan cek URL", url });
     }
   );
-/* 
+
   app.use('/images', express.static(path.join(process.cwd()+'/public/images')))
   app.use('/css', express.static(path.join(process.cwd()+'/public/css')))
-   */
+
   
 
 app.listen(PORT, () => {

@@ -24,7 +24,7 @@ function handleCreateCar(req, res){
         ukuran : req.body.ukuran,
         gambar : req.body.gambar
     }).then(car => {
-        res.redirect(201, "/Cars/");     
+        res.redirect(201, "/");     
     }).catch((err) => {
         res.status(400).json({
           status: "FAIL",
