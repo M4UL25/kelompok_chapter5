@@ -53,6 +53,7 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 20px;
+    transition: ease 1s;
 }
 
 .main-sidebar span{
@@ -71,6 +72,11 @@
     position: relative;
     margin-left: 290px;
     background: #E5E5E5;
+    transition: ease 1s;
+}
+
+.marginleft{
+    margin-left: 70px;
 }
 
 
@@ -132,6 +138,7 @@
 
 .main-content{
     padding: 115px 2% 0 2%;
+    height: 100vh;
 }
 
 .main-content p{
@@ -279,4 +286,18 @@
 .button-save-cancel .save{
     background: #0D28A6;
     color: #fff;
+}
+
+.logo{
+    transition: ease 1s;
+    margin-right: 10%;
+}
+
+#toggler{
+    cursor: pointer;
+}
+
+.hidden{
+    width: 0;
+    margin: 0;
 }
