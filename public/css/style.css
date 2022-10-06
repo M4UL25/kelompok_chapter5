@@ -1,0 +1,280 @@
+*{
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar{
+    height:100%;
+    position:fixed!important;
+    z-index:1;
+    overflow:auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar-menu{
+    width: 70px;
+    background-color: #0D28A6;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 18px;
+    flex-direction: column;
+}
+
+.logo-menu{
+    margin-bottom: 18px;
+}
+
+.menu-button{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px; 
+    color: #fff;
+    width: 100%;
+    padding: 13px 0;
+}
+
+.sidebar-menu .selected{
+    background-color: rgba(255, 255, 255, 0.3);
+    font-weight: 700;
+}
+
+.main-sidebar{
+    width: 220px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.main-sidebar span{
+    margin-bottom: 8px;
+    padding: 11px 24px;
+    color: #8A8A8A;
+}
+
+.main-sidebar .selected{
+    background: #CFD4ED;
+    color: black;
+}
+
+
+.page-content{
+    position: relative;
+    margin-left: 290px;
+    background: #E5E5E5;
+}
+
+
+.fixed-top{
+    margin-left: 70px;
+    height: 70px;
+}
+
+.navbar .container-fluid{
+    --bs-gutter-x: 48px;
+}
+
+.navbar-collapse > *{
+    margin-left: 20px;
+}
+
+.user > * {
+    margin-left: 4px;   
+}
+    
+.navbar-collapse{
+    justify-content: flex-end;
+}
+
+.navbar-collapse input{
+    width: 174px;
+    height: 36px;
+    outline: none;
+    border: 1px solid #D0D0D0;
+    padding-left: 38px;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    color: #8A8A8A;
+    position: relative;
+}
+
+.navbar-collapse .cari{
+    position: relative;
+}
+
+.navbar-collapse .cari img{
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    z-index: 1;
+}
+
+.navbar-collapse button{
+    width: 70px;
+    height: 36px;
+}
+
+.navbar-collapse input, .navbar-collapse button{
+    border-radius: 0;
+}
+
+.main-content{
+    padding: 115px 2% 0 2%;
+}
+
+.main-content p{
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 20px;
+}
+
+.title button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 12px;
+    width: max-content;
+    height: 36px;
+    left: 1274px;
+    top: 144px;
+    background: #0D28A6;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.button-option{
+    padding: 6px 12px 10px 12px;
+    margin-right: 10px;
+    width: max-content;
+    height: 36px;
+    background: #FFFFFF;
+    border: 1px solid #AEB7E1;
+    border-radius: 2px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #AEB7E1;
+}
+
+.main-content .selected{
+    background: #CFD4ED;
+    color: #0D28A6;
+    border: 1px solid #0D28A6;
+}
+
+.card_button{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.card_button button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 10px;
+    width: 120px;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #FA2C5A;
+    border-radius: 2px;
+    color: #FA2C5A;
+}
+
+.card_button .edit{
+    background: #5CB85F;
+    border: 1px solid #5CB85F;
+    color: #fff;
+}
+
+.cars-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cars-container .card{
+    margin-bottom: 2rem;
+}
+
+
+.main-content form{
+    width: 100%;
+    background-color: #fff;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    color: #3C3C3C;
+    padding: 16px 16px 16px 0;
+}
+
+.main-content form label{
+    width: 171px;
+    padding-left: 16px;
+}
+
+.main-content form input, .main-content form select{
+    padding: 9px 12px;
+    gap: 8px;
+    width: 339px;
+    height: 36px;
+    background: #FFFFFF;
+    border: 1px solid #D0D0D0;
+    border-radius: 2px;
+    margin-bottom: 16px;
+}
+
+.main-content input[type=file]{
+    padding: 5px 12px;
+    margin-bottom: 0;
+}
+
+.button-save-cancel{
+    position: absolute;
+    left: 24px;
+    bottom: 30px;
+}
+
+.button-save-cancel button{
+    padding: 7px 12px 9px 12px;
+    gap: 10px;
+    width: 69px;
+    height: 36px;
+    left: 315px;
+    top: 825px;
+    background: #FFFFFF;
+    border: 1px solid #0D28A6;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #0D28A6;
+}
+
+.button-save-cancel .save{
+    background: #0D28A6;
+    color: #fff;
+}
