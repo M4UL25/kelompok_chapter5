@@ -24,7 +24,7 @@ function handleCreateCar(req, res){
         ukuran : req.body.ukuran,
         gambar : req.body.gambar
     }).then(car => {
-        res.redirect(201, "/");     
+      res.status(201).redirect("/Cars");     
     }).catch((err) => {
         res.status(400).json({
           status: "FAIL",
@@ -71,7 +71,7 @@ function handlePageUpdateCar(req, res){
 function handleupdateCar(req, res){
     const car = req.car;
     car.update(req.body).then(()=>{
-        res.redirect(200, "/Cars/" + car.id);
+        res.status(200).redirect("/Cars");
     }).catch((err) => {
         res.status(400).json({
           status: "FAIL",
@@ -83,7 +83,7 @@ function handleupdateCar(req, res){
 function handleDeleteCar(req, res){
   const car = req.car;
   car.destroy().then(()=>{
-      res.redirect(204, "/Cars");
+    res.status(204).redirect("/Cars");
   }).catch((err) => {
       res.status(400).json({
         status: "FAIL",
