@@ -103,7 +103,7 @@
                 <% Cars.forEach((car) => { %>
                     <div class="card" style="width: 18rem;">
                         <p class="ukuran" style="display: none;"><%= car?.ukuran %></p>
-                        <img src="/uploads/<%= car.gambar %>" class="card-img-top" alt="...">
+                        <img src="/uploads/<%= car?.gambar %>" class="card-img-top" alt="...">
                         <div class="card-body">
                           <p class="nama"><%= car?.nama %></p>
                           <p>Rp <%= car?.harga %> / hari</p>

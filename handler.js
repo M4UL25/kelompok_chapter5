@@ -72,7 +72,12 @@ function handlePageUpdateCar(req, res){
 
 function handleupdateCar(req, res){
     const car = req.car;
-    car.update(req.body).then(()=>{
+    car.update({
+        nama: req.body.nama,
+        harga: req.body.harga,
+        ukuran: req.body.ukuran,
+        gambar: req.file.filename
+    }).then(()=>{
         res.status(200).redirect("/Cars");
     }).catch((err) => {
         res.status(400).json({

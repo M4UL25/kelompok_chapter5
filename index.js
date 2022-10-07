@@ -4,6 +4,7 @@ const handler = require('./handler');
 const middleware = require('./middleware');
 const upload = require("./upload");
 const path = require("path");
+const multer = require('multer');
 
 const PORT = 8000;
 
@@ -39,7 +40,7 @@ app.get('/Cars/:id', middleware.setCar, handler.handleGetCar);
 app.get('/Cars/:id/update', middleware.setCar, handler.handlePageUpdateCar);
 
 //api POST update mobil by id
-app.post('/Cars/:id/update', middleware.setCar, handler.handleupdateCar);
+app.post('/Cars/:id/update', upload.single("gambar"), middleware.setCar, handler.handleupdateCar);
 
 //api GET delete mobil by id
 app.get('/Cars/:id/delete', middleware.setCar, handler.handleDeleteCar);
