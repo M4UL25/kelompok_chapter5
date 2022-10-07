@@ -30,7 +30,7 @@ app.get('/Cars', handler.handleListCars);
 app.get('/Cars/create', handler.handlePageCreateCar);
 
 //api POST create data mobil
-app.post('/Cars', handler.handleCreateCar);
+app.post('/Cars', upload.single("gambar"), handler.handleCreateCar);
 
 //ke halaman detail dan api get detail mobil
 app.get('/Cars/:id', middleware.setCar, handler.handleGetCar);
@@ -44,18 +44,17 @@ app.post('/Cars/:id/update', middleware.setCar, handler.handleupdateCar);
 //api GET delete mobil by id
 app.get('/Cars/:id/delete', middleware.setCar, handler.handleDeleteCar);
 
-app.put("/Cars/:id/picture",
-    upload.single("picture"),
-    (req, res) => {
-      const url = `/uploads/${req.file.filename}`;
-      res
-        .status(200)
-        .json({ message: "Foto berhasil di-upload, silahkan cek URL", url });
-    }
-  );
+// app.put("/Cars/:id/picture",upload.single("picture"),
+//     (req, res) => {
+//       const url = `/uploads/${req.file.filename}`;
+//       res
+//         .status(200)
+//         .json({ message: "Foto berhasil di-upload, silahkan cek URL", url });
+//     }
+//   );
 
-  app.use('/images', express.static(path.join(process.cwd()+'/public/images')))
-  app.use('/css', express.static(path.join(process.cwd()+'/public/css')))
+  // app.use('/images', express.static(path.join(process.cwd()+'/public/images')))
+  // app.use('/css', express.static(path.join(process.cwd()+'/public/css')))
 
   
 

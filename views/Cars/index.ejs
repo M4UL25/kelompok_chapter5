@@ -43,7 +43,7 @@
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <form class="d-flex" role="search">
+                    <form class="d-flex" role="search" Content-Type="multipart/form-data">
                         <div class="cari" >
                             <img src="images/fi_search.png" alt="">
                             <input type="text" class="" placeholder="Search" id="search-input">
@@ -94,7 +94,7 @@
                 <% Cars.forEach((car) => { %>
                     <div class="card" style="width: 18rem;">
                         <p class="ukuran" style="display: none;"><%= car?.ukuran %></p>
-                        <img src="<%= car?.gambar %>" class="card-img-top" alt="...">
+                        <img src="/uploads/<%= car.gambar %>" class="card-img-top" alt="...">
                         <div class="card-body">
                           <p class="nama"><%= car?.nama %></p>
                           <p>Rp <%= car?.harga %> / hari</p>
