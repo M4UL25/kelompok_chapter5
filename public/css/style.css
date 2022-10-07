@@ -268,7 +268,7 @@
     bottom: 30px;
 }
 
-.button-save-cancel button, .button-allert-delete button{
+.button-save-cancel button, .button-alert-delete button{
     padding: 7px 12px 9px 12px;
     gap: 10px;
     width: 69px;
@@ -283,7 +283,7 @@
     color: #0D28A6;
 }
 
-.button-save-cancel .save, .button-allert-delete .save{
+.button-save-cancel .save, .button-alert-delete .save{
     background: #0D28A6;
     color: #fff;
 }

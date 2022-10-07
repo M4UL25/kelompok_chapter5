@@ -8,3 +8,4 @@ toggler.addEventListener("click", (e) => {
     logo.classList.toggle("hidden");
     pagecontent.classList.toggle("marginleft");
 });
+
