@@ -1,5 +1,4 @@
 const { Cars } = require('./models');
-const multer = require('multer');
 
 /* function handleRoot(req, res){
     // res.send("Hello from express!");
@@ -24,7 +23,9 @@ function handleCreateCar(req, res){
         ukuran : req.body.ukuran,
         gambar : req.file.filename
     }).then(car => {
-      res.status(201).redirect("/Cars");     
+      res.status(201).send(
+        '<script>window.location.href="/Cars";alert("Data Berhasil di Simpan");</script>'
+      )   
     }).catch((err) => {
         res.status(400).json({
           status: "FAIL",
@@ -37,6 +38,7 @@ function handleListCars(req, res){
   Cars.findAll().then(Cars => {
       res.status(200).render("Cars/index", {
         Cars: Cars,
+        status: "success",
       });
   }).catch((err) => {
       res.status(400).json({

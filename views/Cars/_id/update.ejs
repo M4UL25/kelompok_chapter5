@@ -82,7 +82,7 @@
                 <span>Update Car Information</span>
                 
             </div><br>
-            <form method="POST" action="/Cars/<%= id %>/update">
+            <form method="POST" action="/Cars/<%= id %>/update" enctype="multipart/form-data">
                 <label for="">Nama <span style="color: red;">*</span></label>
                 <input type="text" placeholder="Avanza" name="nama" value="<%= nama %>"><br>
                 <label for="">Sewa Per Hari <span style="color: red;">*</span></label>
