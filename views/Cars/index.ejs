@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- botsstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-menu">
+            <img src="images/Rectangle_63.png" alt="" class="logo-menu">
+            <div class="menu-button">
+                <img src="images/Group_2.png" alt="">
+                <span>Dashboard</span>
+            </div>
+            <div class="menu-button selected">
+                <img src="images/fi_truck.png" alt="">
+                <span>Cars</span>
+            </div>
+        </div>
+        <div class="main-sidebar" id="sidebar">
+            <span>CARS</span>
+            <span class="selected">List Car</span>
+        </div>
+    </div>
+    <div class="page-content" id="page-content">
+        <nav class="navbar navbar-expand-lg bg-white fixed-top">
+            <div class="container-fluid">
+                <img src="images/Rectangle_62.png" width="100px" alt="" id="logo" class="logo">
+                <img src="images/fi_menu.png" alt="" id="toggler">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="cari" >
+                        <img src="images/fi_search.png" alt="">
+                        <input type="text" class="" placeholder="Search" id="search-input">
+                    </div>
+                    <button class="btn btn-outline-primary" id="search">Search</button>
+                    <div class="user">
+                        <img src="images/Group_15.png" alt="">
+                        <span>Unis Badri</span>
+                        <img src="images/Vector.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <div class="user">
+                    <img src="images/Group_15.png" alt="">
+                    <span>Unis Badri</span>
+                    <img src="images/Vector.png" alt="">
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="cari" >
+                    <img src="images/fi_search.png" alt="">
+                    <input type="text" class="" placeholder="Search" id="search-input">
+                </div>
+                <button class="btn btn-outline-primary" id="search">Search</button>
+            </div>
+        </div>
+
+        <div class="main-content" id="">
+            <p><b>Cars > </b>List Car</p>
+            <div class="title">
+                <span>List Car</span>
+                <a href="/Cars/create"><button><img src="images/fi_plus.png" alt="">Add New Car</button></a>
+            </div>
+            <div id="button">
+                <button class="button-option active" onclick="filter('all')">All</button>
+                <button class="button-option" onclick="filter('Small')">Small</button>
+                <button class="button-option" onclick="filter('Medium')">Medium</button>
+                <button class="button-option" onclick="filter('Large')">Large</button>
+            </div>
+            <br>
+            <div class="cars-container">
+                
+                <% Cars.forEach((car) => { %>
+                    <div class="card" style="width: 18rem;">
+                        <p class="ukuran" style="display: none;"><%= car?.ukuran %></p>
+                        <img src="/uploads/<%= car?.gambar %>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <p class="nama"><%= car?.nama %></p>
+                          <p>Rp <%= car?.harga %> / hari</p>
+                          <p><img src="images/fi_clock (1).png" alt="">  Updated at <%= car?.updatedAt %></p>
+                          <div class="card_button">
+                            <a style="text-decoration:none;"><button  data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="images/fi_trash_2.png" alt="">Delete</button></a>
+                            <a href="/cars/<%= car?.id %>/update" style="text-decoration:none;"><button class="edit"><img src="images/fi_edit.png" alt="">Edit</button></a>
+                          </div>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content" id="alert-delete">
+                                        <div class="modal-body align-items-center text-center m-auto">
+                                            <img src="images/alert-car.png" alt="" class="m-auto">
+                                            <h3 class="fw-bold my-4">Meenghapus Data Mobil</h3>
+                                            <p class="mb-4" style="max-width: 300px;">Anda yakin ingin menghapus data mobil?</p>
+                                            <div class="button-alert-delete" >
+                                                <a href="/cars" style="text-decoration:none;" class=""><button>Cancel</button></a>
+                                                <a href="/cars/<%= car?.id %>/delete"><button class="save" type="submit" value="Delete">Delete</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                  <% }) %>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/script.js"></script>
+
+    <!-- script bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
