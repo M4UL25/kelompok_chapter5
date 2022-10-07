@@ -46,9 +46,9 @@
                     <form class="d-flex" role="search">
                         <div class="cari" >
                             <img src="images/fi_search.png" alt="">
-                            <input type="text" class="" placeholder="Search" id="">
+                            <input type="text" class="" placeholder="Search" id="search-input">
                         </div>
-                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                        <button class="btn btn-outline-primary" type="submit" id="search">Search</button>
                     </form>
                     <div class="user">
                         <img src="images/Group_15.png" alt="">
@@ -82,17 +82,21 @@
                 <span>List Car</span>
                 <a href="/Cars/create"><button><img src="images/fi_plus.png" alt="">Add New Car</button></a>
             </div>
-            <button class="button-option selected">All</button>
-            <button class="button-option">Small</button>
-            <button class="button-option">Medium</button>
-            <button class="button-option">Large</button><br><br>
+            <div id="button">
+                <button class="button-option active" onclick="filter('all')">All</button>
+                <button class="button-option" onclick="filter('Small')">Small</button>
+                <button class="button-option" onclick="filter('Medium')">Medium</button>
+                <button class="button-option" onclick="filter('Large')">Large</button>
+            </div>
+            <br>
             <div class="cars-container">
                 
                 <% Cars.forEach((car) => { %>
                     <div class="card" style="width: 18rem;">
+                        <p class="ukuran" style="display: none;"><%= car?.ukuran %></p>
                         <img src="<%= car?.gambar %>" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <p><%= car?.nama %></p>
+                          <p class="nama"><%= car?.nama %></p>
                           <p>Rp <%= car?.harga %> / hari</p>
                           <p><img src="images/fi_clock (1).png" alt="">  Updated at <%= car?.updatedAt %></p>
                           <div class="card_button">

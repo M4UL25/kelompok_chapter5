@@ -138,7 +138,8 @@
 
 .main-content{
     padding: 115px 2% 0 2%;
-    height: 100vh;
+    min-height: 100vh;
+    height: max-content;
 }
 
 .main-content p{
@@ -176,6 +177,7 @@
 .button-option{
     padding: 6px 12px 10px 12px;
     margin-right: 10px;
+    margin-top: 10px;
     width: max-content;
     height: 36px;
     background: #FFFFFF;
@@ -187,7 +189,7 @@
     color: #AEB7E1;
 }
 
-.main-content .selected{
+.active, .button-option:hover{
     background: #CFD4ED;
     color: #0D28A6;
     border: 1px solid #0D28A6;
@@ -304,4 +306,8 @@
 
 #alert-delete{
     display: flex;
+}
+
+.hide{
+    display: none !important;
 }
