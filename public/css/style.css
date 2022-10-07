@@ -311,3 +311,7 @@
 .hide{
     display: none !important;
 }
+
+.btn-outline-primary {
+    margin-left: 0;
+}

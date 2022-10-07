@@ -40,4 +40,18 @@ function filter(value){
     }
 }
 
+document.getElementById("search").addEventListener("click", () => {
+    let searchInput = document.getElementById("search-input").value;
+    let elements = document.querySelectorAll(".nama");
+    let cards = document.querySelectorAll(".card");
+
+    elements.forEach((element, index) => {
+        if (element.innerHTML.toUpperCase().includes(searchInput.toUpperCase())){
+            cards[index].classList.remove("hide");
+        }else{
+            cards[index].classList.add("hide");
+        }
+    })
+})
+
 
