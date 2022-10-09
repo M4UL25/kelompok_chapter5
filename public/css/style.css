@@ -315,3 +315,14 @@
 .btn-outline-primary {
     margin-left: 0;
 }
+
+.alert{
+    position: fixed !important;
+    background: #73CA5C !important;
+    border: none !important;
+    color: #fff !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    top: 100px;
+    left: 50%;
+    z-index: 99999;
+}
