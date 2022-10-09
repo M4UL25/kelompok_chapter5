@@ -40,7 +40,7 @@ function filter(value){
     }
 }
 
-document.getElementById("search").addEventListener("click", () => {
+function search(){
     let searchInput = document.getElementById("search-input").value;
     let elements = document.querySelectorAll(".nama");
     let cards = document.querySelectorAll(".card");
@@ -52,6 +52,14 @@ document.getElementById("search").addEventListener("click", () => {
             cards[index].classList.add("hide");
         }
     })
-})
+}
+
+/* 
+
+let alerts = document.getElementById("alert");
+setTimeout(()=>{
+    alerts.classList.remove("show");
+    alerts.classList.add("hide");
+}, 2000) */
 
 

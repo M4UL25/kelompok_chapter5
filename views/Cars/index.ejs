@@ -47,7 +47,7 @@
                         <img src="images/fi_search.png" alt="">
                         <input type="text" class="" placeholder="Search" id="search-input">
                     </div>
-                    <button class="btn btn-outline-primary" id="search">Search</button>
+                    <button class="btn btn-outline-primary" onclick="search()">Search</button>
                     <div class="user">
                         <img src="images/Group_15.png" alt="">
                         <span>Unis Badri</span>
@@ -78,14 +78,14 @@
         <div class="main-content" id="">
             <p><b>Cars > </b>List Car</p>
 
-            <!-- <div>
-                <% if(status != "success") { %>
+            <div>
+                <% if(status == "201") { %>
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
                         <strong>Holy guacamole!</strong> You should check in on some of those fields below.
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                       </div>
                 <% } %> 
-            </div> -->
+            </div>
 
             <div class="title">
                 <span>List Car</span>
@@ -105,7 +105,7 @@
                         <p class="ukuran" style="display: none;"><%= car?.ukuran %></p>
                         <img src="/uploads/<%= car?.gambar %>" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <p class="nama"><%= car?.nama %></p>
+                          <p class="nama"><%= car?.nama %>/<%= car?.ukuran %></p>
                           <p>Rp <%= car?.harga %> / hari</p>
                           <p><img src="images/fi_clock (1).png" alt="">  Updated at <%= car?.updatedAt %></p>
                           <div class="card_button">
