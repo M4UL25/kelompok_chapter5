@@ -25,6 +25,23 @@ Tabel data pada tugas kali ini berisi seperti gambar diatas, kemudian dari keemp
 
 relasi diatas megambarkan bagaimana sistem akan bekerja
 
+# BackEnd
+## Setup Server
+```
+npm install
+```
+`npm install` untuk mendownload semua third party modules ke dalam project. <br/>
+Sebelum lanjut, pastikan [PostgreSQL](https://www.postgresql.org/) sudah ter-install dan berjalan di komputer. <br/>
+Selanjutnya jalankan perintah: <br/>
+```
+sequelize db:create
+sequlize db:migrate
+
+//OPTIONAL : untuk menambah data dummy ke Database
+sequelize db:seed:all
+sequlize db:seed:undo // menghapus data dummy
+```
+
 ## Endpoint
 
 - ***GET Method '/'*** <br/>
