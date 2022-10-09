@@ -88,7 +88,9 @@ function handleupdateCar(req, res){
         ukuran: req.body.ukuran,
         gambar: gambar
     }).then(()=>{
-        res.status(200).redirect("/Cars");
+      res.status(200).send(
+        '<script>window.location.href="/Cars";alert("Data Berhasil di Simpan");</script>'
+      ) 
     }).catch((err) => {
         res.status(400).json({
           status: "FAIL",
