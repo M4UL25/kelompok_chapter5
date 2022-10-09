@@ -24,3 +24,21 @@ Tabel data pada tugas kali ini berisi seperti gambar diatas, kemudian dari keemp
 ![relasi](https://user-images.githubusercontent.com/55015792/194566716-f7892e14-bba1-40b8-a2b8-403c9932aeda.png)
 
 relasi diatas megambarkan bagaimana sistem akan bekerja
+
+## Endpoint
+
+- ***GET Method '/'*** <br/>
+[Getting Root](http://127.0.0.1:8000)
+![listCar](https://user-images.githubusercontent.com/103182853/194753866-dc7b6a4b-abbc-4d0b-83d8-301dd1d51cae.png)
+
+- ***GET Method '/Cars'*** <br/>
+[Dispay all the car list](http://127.0.0.1:8000)
+![GetListCars](https://user-images.githubusercontent.com/103182853/194754713-32f29748-7b1d-4f4b-823c-c89d359283ca.png)
+
+- ***GET Method '/Cars/create'*** <br/>
+[Create new car](http://127.0.0.1:8000/Cars/create)
+![createCar](https://user-images.githubusercontent.com/103182853/194754060-1327d7f2-0f66-4abc-bbfe-71c3c32140cb.png)
+
+- ***GET Method '/Cars/update'*** <br/>
+[Update existing car](http://127.0.0.1:8000/Cars/:id/update)
+![image](https://user-images.githubusercontent.com/103182853/194754888-797f12b5-90da-4907-9d75-f0409008e246.png)
